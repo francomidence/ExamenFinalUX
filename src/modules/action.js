@@ -4,9 +4,14 @@ const Types = {
     DELETE_ITEM: "DELETE_ITEM"
   };
   // actions
+  var month;
+  var day;
+  var max;
+  var min;
+
   const createItem = task => ({
     type: Types.CREATE_ITEM,
-    payload: task
+    payload: month,day,max,min
   });
   
   const deleteItem = id => ({

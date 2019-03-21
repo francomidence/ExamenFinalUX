@@ -2,7 +2,10 @@ import ACTIONS from "./action";
 import _ from "lodash";
 
 const defaultState = {
-  items: []
+  items: [{month:'March', day:'20', max: '38', min: '18'}, 
+  {month:'March', day:'21', max: '30', min: '20'}, 
+  {month:'March',day:'22', max: '33', min: '17'}, 
+  {month:'March', day:'23', max: '31', min: '19'}]
 };
 
 const todoReducer = (state = defaultState, action) => {
@@ -11,7 +14,7 @@ const todoReducer = (state = defaultState, action) => {
       console.log(action);
 
       let item = action.payload;
-      let newItem = { id: state.items.length + 1, description: item };
+      let newItem = { id: state.items.length + 1, month: item.month, day:item.day, max:item.max, min:item.min};
       let newState = _.cloneDeep(state);
       newState.items.push(newItem);
       return newState;

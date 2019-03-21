@@ -42,7 +42,7 @@ class SampleComponent extends Component {
     constructor() {
         super();
         this.state = {
-            item: ""
+            item: "",month:"",day:"",max:"",min:""
         };
     }
   
@@ -50,7 +50,7 @@ class SampleComponent extends Component {
   generate = () => {
     return this.props.items.map(item => (
       <ListItem key={item.id}>
-        <ListItemText primary={item.description} />
+        <ListItemText primary={item.month} secondary={item.day}/>
         <ListItemSecondaryAction>
           <IconButton
             aria-label="Delete"
